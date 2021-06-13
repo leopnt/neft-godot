@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://neft_godot/src/organism.gd" type="Script" id=1]
+
+[node name="Organism" type="Node"]
+script = ExtResource( 1 )

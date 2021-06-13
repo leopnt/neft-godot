@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://example/main.gd" type="Script" id=1]
+[ext_resource path="res://example/WallManager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://example/Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://neft_godot/scenes/Population.tscn" type="PackedScene" id=4]
+[ext_resource path="res://example/Bird.tscn" type="PackedScene" id=5]
+[ext_resource path="res://example/pause.gd" type="Script" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.925781, 0.915133, 0.877865, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+shadow_color = Color( 0, 0, 0, 0.235294 )
+shadow_size = 5
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Pause" type="Node" parent="."]
+pause_mode = 2
+script = ExtResource( 7 )
+
+[node name="Population" parent="." instance=ExtResource( 4 )]
+_mutation_rate = 0.01
+size = 200
+organism_parent_scene = ExtResource( 5 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Display" type="Label" parent="CanvasLayer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 67.0
+margin_bottom = 34.0
+custom_styles/normal = SubResource( 1 )
+custom_colors/font_color = Color( 0.14902, 0.14902, 0.14902, 1 )
+text = "Display"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallManager" parent="." instance=ExtResource( 2 )]
+
+[node name="Wall" parent="WallManager" instance=ExtResource( 3 )]
+position = Vector2( 1024, 394.171 )
+
+[node name="Wall2" parent="WallManager" instance=ExtResource( 3 )]
+position = Vector2( 1365, 373.578 )
+
+[node name="Wall3" parent="WallManager" instance=ExtResource( 3 )]
+position = Vector2( 1706, 383.759 )

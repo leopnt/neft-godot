@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://neft_godot/scenes/Organism.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://example/bird.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 31.9059
+
+[node name="Bird" type="RigidBody2D"]
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="Organism" parent="." instance=ExtResource( 1 )]
+input_size = 3
+hidden_layers_sizes = [ 6, 3 ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.568627 )
+texture = ExtResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

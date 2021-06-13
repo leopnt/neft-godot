@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://example/wallmanager.gd" type="Script" id=1]
+
+[node name="WallManager" type="Node2D"]
+script = ExtResource( 1 )
+
+[connection signal="body_entered" from="Wall" to="Wall" method="_on_Wall_body_entered"]
