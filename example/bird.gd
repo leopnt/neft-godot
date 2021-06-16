@@ -21,7 +21,7 @@ func _ready():
 func _integrate_forces(state):
 	# use integrate forces because we need to teleport the rigidbody
 	# when respawning the birds
-	# Teleporting the RigidBody makes a lot of glitches
+	# Teleporting the RigidBody in the _process() makes a lot of glitches
 	
 	if !is_dead() && !_respawn:
 		$Organism.add_fitness(0.1) # Increase the fitness each frame if alive
@@ -64,7 +64,8 @@ func _apply_neural_net_decision() -> void:
 	
 	# calculate neural net outputs
 	var output:Array = $Organism.think(inputs)
-	var should_jump:bool = true if output[0] > 0 else false
+	# compare likelihood of jumping vs likelihood of not jumping
+	var should_jump = output[0] > output[1]
 	
 	# take decision from the output
 	if should_jump:

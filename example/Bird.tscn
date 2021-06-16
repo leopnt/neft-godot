@@ -14,6 +14,7 @@ script = ExtResource( 3 )
 [node name="Organism" parent="." instance=ExtResource( 1 )]
 input_size = 3
 hidden_layers_sizes = [ 6, 3 ]
+output_size = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
