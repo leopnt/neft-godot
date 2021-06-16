@@ -11,7 +11,7 @@ This part will not teach neuroevolution. I recommend *The Nature Of Code* by Dan
 
 1. Download this project.
     ```
-    git clone https://project
+    git clone https://github.com/leopnt/neft_godot.git
     ```
     Or download and extract the **.zip** archive.
 
