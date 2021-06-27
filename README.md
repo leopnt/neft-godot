@@ -1,6 +1,10 @@
 # NEFT for Godot
 NeuroEvolution of Fixed Topology library for Godot focused on modularity.
 
+## Projects
+Here is a project that uses NEFT for godot. Made by *zwometer*
+> https://zwometer.itch.io/ai-racing
+
 ## Setup - Installation
 Due to the single inheritance principle in Godot, the setup requires some work but the library has been thought to be as easy as possible to implement.
 
@@ -88,7 +92,7 @@ Specify the object **(.tscn)** that you want to train from the editor inspector:
 
     It's advised to **normalize the inputs** (values between 0 and 1) as much as possible to avoid input issues.
 
-## Example
+## Demo
 You can find an example in the `example` folder. Here is some data extracted from the Flappy Bird example. I ran it with
 `Engine.time_scale = 2`
 
