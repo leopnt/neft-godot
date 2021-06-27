@@ -11,12 +11,12 @@ config_version=4
 [application]
 
 config/name="neft_godot"
-run/main_scene="res://example/Main.tscn"
+run/main_scene="res://example/flappy_bird/scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://example/global.gd"
+Global="*res://example/flappy_bird/src/global.gd"
 
 [display]
 

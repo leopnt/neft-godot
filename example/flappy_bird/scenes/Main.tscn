@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://example/main.gd" type="Script" id=1]
-[ext_resource path="res://example/WallManager.tscn" type="PackedScene" id=2]
-[ext_resource path="res://example/Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://example/flappy_bird/scenes/Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://example/flappy_bird/src/pause.gd" type="Script" id=2]
+[ext_resource path="res://example/flappy_bird/scenes/Bird.tscn" type="PackedScene" id=3]
 [ext_resource path="res://neft_godot/scenes/Population.tscn" type="PackedScene" id=4]
-[ext_resource path="res://example/Bird.tscn" type="PackedScene" id=5]
-[ext_resource path="res://example/pause.gd" type="Script" id=7]
+[ext_resource path="res://example/flappy_bird/src/main.gd" type="Script" id=5]
+[ext_resource path="res://example/flappy_bird/scenes/WallManager.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.925781, 0.915133, 0.877865, 1 )
@@ -21,16 +21,16 @@ shadow_color = Color( 0, 0, 0, 0.235294 )
 shadow_size = 5
 
 [node name="Main" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource( 5 )
 
 [node name="Pause" type="Node" parent="."]
 pause_mode = 2
-script = ExtResource( 7 )
+script = ExtResource( 2 )
 
 [node name="Population" parent="." instance=ExtResource( 4 )]
 _mutation_rate = 0.01
 size = 200
-organism_parent_scene = ExtResource( 5 )
+organism_parent_scene = ExtResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -47,13 +47,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WallManager" parent="." instance=ExtResource( 2 )]
+[node name="WallManager" parent="." instance=ExtResource( 6 )]
+size = 3
+wall_speed = 200
 
-[node name="Wall" parent="WallManager" instance=ExtResource( 3 )]
+[node name="Wall" parent="WallManager" instance=ExtResource( 1 )]
 position = Vector2( 1024, 394.171 )
 
-[node name="Wall2" parent="WallManager" instance=ExtResource( 3 )]
+[node name="Wall2" parent="WallManager" instance=ExtResource( 1 )]
 position = Vector2( 1365, 373.578 )
 
-[node name="Wall3" parent="WallManager" instance=ExtResource( 3 )]
+[node name="Wall3" parent="WallManager" instance=ExtResource( 1 )]
 position = Vector2( 1706, 383.759 )

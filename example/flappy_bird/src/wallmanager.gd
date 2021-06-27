@@ -1,8 +1,8 @@
 tool
 extends Node2D
 
-const WallScene = preload("res://example/Wall.tscn")
-const Wall = preload("res://example/wall.gd")
+const WallScene = preload("res://example/flappy_bird/scenes/Wall.tscn")
+const Wall = preload("res://example/flappy_bird/src/wall.gd")
 
 export(int) var size:int = 3 setget set_size
 # number of visible walls

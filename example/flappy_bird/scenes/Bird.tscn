@@ -2,7 +2,7 @@
 
 [ext_resource path="res://neft_godot/scenes/Organism.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://example/bird.gd" type="Script" id=3]
+[ext_resource path="res://example/flappy_bird/src/bird.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 31.9059
